@@ -127,7 +127,7 @@ function SignUp() {
             <label className='block text-xs font-medium text-gray-200 mb-1 ml-1 drop-shadow'>Full Name</label>
             <input 
               type="text" 
-              placeholder='e.g. John Doe' 
+              placeholder='Your Name here' 
               className='w-full h-10 sm:h-11 outline-none border border-white/30 bg-black/25 focus:bg-black/45 focus:border-cyan-400 text-white placeholder-gray-400 px-3.5 rounded-xl text-xs sm:text-sm transition-all shadow-inner' 
               required 
               onChange={(e) => setName(e.target.value)} 
