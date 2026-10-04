@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07152f"/>
+      <stop offset="1" stop-color="#102b52"/>
+    </linearGradient>
+    <linearGradient id="primary" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#20d4ff"/>
+      <stop offset="1" stop-color="#4c6fff"/>
+    </linearGradient>
+    <linearGradient id="success" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#28e0a3"/>
+      <stop offset="1" stop-color="#159b9b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity=".28"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#79dfff"/>
+    </marker>
+    <style>
+      .title { font: 700 42px Arial, sans-serif; fill: #ffffff; }
+      .subtitle { font: 400 19px Arial, sans-serif; fill: #a8c4e8; }
+      .label { font: 700 21px Arial, sans-serif; fill: #ffffff; }
+      .small { font: 400 17px Arial, sans-serif; fill: #d2e4fb; }
+      .branch { font: 700 16px Arial, sans-serif; fill: #8ee7ff; }
+      .box { stroke: #70dfff; stroke-width: 2; rx: 18; filter: url(#shadow); }
+      .line { fill: none; stroke: #79dfff; stroke-width: 4; marker-end: url(#arrow); }
+      .dashed { fill: none; stroke: #87a6c9; stroke-width: 3; stroke-dasharray: 9 8; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1800" height="1200" fill="url(#bg)"/>
+  <circle cx="1620" cy="120" r="240" fill="#1b75a0" opacity=".12"/>
+  <circle cx="160" cy="1080" r="290" fill="#3478ff" opacity=".10"/>
+
+  <text x="900" y="70" text-anchor="middle" class="title">Virtual Assistant — Application Flow</text>
+  <text x="900" y="105" text-anchor="middle" class="subtitle">From authentication and customization to personalized Gemini-powered voice interaction</text>
+
+  <rect x="690" y="145" width="420" height="78" fill="url(#primary)" class="box"/>
+  <text x="900" y="178" text-anchor="middle" class="label">User opens application</text>
+  <text x="900" y="204" text-anchor="middle" class="small">React frontend loads</text>
+
+  <path d="M900 223 V270" class="line"/>
+  <rect x="735" y="270" width="330" height="78" fill="#183e68" class="box"/>
+  <text x="900" y="303" text-anchor="middle" class="label">Authentication check</text>
+  <text x="900" y="329" text-anchor="middle" class="small">Sign in or continue</text>
+
+  <path d="M735 309 H450 V385" class="line"/>
+  <text x="525" y="296" class="branch">Not authenticated</text>
+  <rect x="215" y="385" width="470" height="100" fill="#264b75" class="box"/>
+  <text x="450" y="421" text-anchor="middle" class="label">Sign up / sign in</text>
+  <text x="450" y="451" text-anchor="middle" class="small">Credentials validated by Express API</text>
+  <text x="450" y="475" text-anchor="middle" class="small">User record stored in MongoDB</text>
+
+  <path d="M1065 309 H1350 V385" class="line"/>
+  <text x="1165" y="296" class="branch">Authenticated</text>
+  <rect x="1115" y="385" width="470" height="100" fill="#264b75" class="box"/>
+  <text x="1350" y="421" text-anchor="middle" class="label">Load user profile</text>
+  <text x="1350" y="451" text-anchor="middle" class="small">Retrieve assistant name and avatar</text>
+  <text x="1350" y="475" text-anchor="middle" class="small">from MongoDB</text>
+
+  <path d="M450 485 V535 H900" class="line"/>
+  <path d="M1350 485 V535 H900" class="line"/>
+  <rect x="700" y="535" width="400" height="78" fill="#183e68" class="box"/>
+  <text x="900" y="568" text-anchor="middle" class="label">Assistant configured?</text>
+  <text x="900" y="594" text-anchor="middle" class="small">Name and avatar available</text>
+
+  <path d="M700 574 H390 V665" class="line"/>
+  <text x="500" y="560" class="branch">No</text>
+  <rect x="130" y="665" width="520" height="105" fill="#264b75" class="box"/>
+  <text x="390" y="701" text-anchor="middle" class="label">Customize assistant</text>
+  <text x="390" y="731" text-anchor="middle" class="small">Choose avatar and enter assistant name</text>
+  <text x="390" y="755" text-anchor="middle" class="small">Upload image through Cloudinary</text>
+
+  <path d="M1100 574 H1410 V665" class="line"/>
+  <text x="1190" y="560" class="branch">Yes</text>
+  <rect x="1150" y="665" width="520" height="105" fill="#264b75" class="box"/>
+  <text x="1410" y="701" text-anchor="middle" class="label">Open assistant dashboard</text>
+  <text x="1410" y="731" text-anchor="middle" class="small">Personalized assistant is ready</text>
+  <text x="1410" y="755" text-anchor="middle" class="small">for user interaction</text>
+
+  <path d="M390 770 V820 H900" class="line"/>
+  <path d="M1410 770 V820 H900" class="line"/>
+  <rect x="690" y="820" width="420" height="78" fill="url(#success)" class="box"/>
+  <text x="900" y="853" text-anchor="middle" class="label">User sends a command</text>
+  <text x="900" y="879" text-anchor="middle" class="small">Voice input or typed message</text>
+
+  <path d="M900 898 V940" class="line"/>
+  <rect x="690" y="940" width="420" height="78" fill="#183e68" class="box"/>
+  <text x="900" y="973" text-anchor="middle" class="label">Backend processes request</text>
+  <text x="900" y="999" text-anchor="middle" class="small">Authenticate • build prompt • call Gemini</text>
+
+  <path d="M690 979 H410 V1080" class="dashed"/>
+  <text x="465" y="965" class="branch">External services</text>
+  <rect x="130" y="1040" width="560" height="90" fill="#20466f" class="box"/>
+  <text x="410" y="1075" text-anchor="middle" class="label">Google Gemini API</text>
+  <text x="410" y="1104" text-anchor="middle" class="small">Generates a personalized AI response</text>
+
+  <path d="M1110 979 H1390 V1080" class="line"/>
+  <rect x="1110" y="1040" width="560" height="90" fill="url(#success)" class="box"/>
+  <text x="1390" y="1075" text-anchor="middle" class="label">Response returned to frontend</text>
+  <text x="1390" y="1104" text-anchor="middle" class="small">Display text and speak response aloud</text>
+
+  <text x="900" y="1165" text-anchor="middle" class="subtitle">The interaction repeats continuously for a real-time assistant experience</text>
+</svg>
